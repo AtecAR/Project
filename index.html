@@ -1,28 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebAR Marker Detection</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebAR Example</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-</head>
-<body style="margin: 0; overflow: hidden;">
+    <script src="https://rawcdn.githack.com/AR-js-org/AR.js/3.3.2/aframe/build/aframe-ar.js"></script>
+  </head>
+  <body style="margin: 0; overflow: hidden;">
     <a-scene embedded arjs>
-        <!-- マーカー1の設定 -->
-        <a-marker type="pattern" url="marker/mark_id_01.patt" id="marker1">
-            <a-entity id="marker1-entity" position="0 0 0" visible="false"></a-entity>
-        </a-marker>
-
-        <!-- マーカー2の設定 -->
-        <a-marker type="pattern" url="marker/mark_id_02.patt" id="marker2">
-            <a-entity id="marker2-entity" position="0 0 0" visible="false"></a-entity>
-        </a-marker>
-
-        <!-- 共通の3Dカメラ設定 -->
-        <a-entity camera></a-entity>
+      <!-- マーカーを読み取る -->
+      <a-marker type="pattern" url="./marker/mark_id_00.patt">
+        <!-- 青色のキューブをAR表示する -->
+        <a-box position="0 0.5 0" material="color: blue;"></a-box>
+      </a-marker>
+      <a-entity camera></a-entity>
     </a-scene>
-
-    <script src="scripts/plot-markers.js"></script>
-</body>
+  </body>
 </html>
