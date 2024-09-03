@@ -6,19 +6,23 @@
     <title>WebAR Marker Detection</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <script src="scripts/main.js"></script>
 </head>
 <body style="margin: 0; overflow: hidden;">
     <a-scene embedded arjs>
-        <!-- カメラ -->
-        <a-marker-camera preset="hiro"></a-marker-camera>
-        
-        <!-- 20個のマーカーをループで作成 -->
-        <a-entity id="markers"></a-entity>
-        
-        <!-- 赤と緑の点のためのテンプレート -->
-        <a-sphere id="redDot" radius="0.01" color="red" visible="false"></a-sphere>
-        <a-sphere id="greenDot" radius="0.01" color="green" visible="false"></a-sphere>
+        <!-- マーカー1の設定 -->
+        <a-marker type="pattern" url="marker/mark_id_01.patt" id="marker1">
+            <a-entity id="marker1-entity" position="0 0 0" visible="false"></a-entity>
+        </a-marker>
+
+        <!-- マーカー2の設定 -->
+        <a-marker type="pattern" url="marker/mark_id_02.patt" id="marker2">
+            <a-entity id="marker2-entity" position="0 0 0" visible="false"></a-entity>
+        </a-marker>
+
+        <!-- 共通の3Dカメラ設定 -->
+        <a-entity camera></a-entity>
     </a-scene>
+
+    <script src="scripts/plot-markers.js"></script>
 </body>
 </html>
